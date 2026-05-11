@@ -4,7 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CategoriaRepository extends JpaRepository {
+public interface CursoRepository extends JpaRepository {
     Page<Curso> findAllByAtivoTrue(Pageable pageable);
     Page<Curso> findAllByAtivoTrue(Long id);
 }

@@ -1,4 +1,4 @@
-package br.com.senai.api_cursos.api_curso.cliente;
+package br.com.senai.api.curso;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
