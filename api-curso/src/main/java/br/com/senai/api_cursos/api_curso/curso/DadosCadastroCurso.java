@@ -1,12 +1,11 @@
-package br.com.senai.api_cursos.api_curso.cliente;
+package br.com.senai.api_cursos.api_curso.curso;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
 public record DadosCadastroCurso(
 
-        @NotNull
-        @Size(min = 3, max = 100)
+        @NotBlank
         String nome,
 
         @NotNull

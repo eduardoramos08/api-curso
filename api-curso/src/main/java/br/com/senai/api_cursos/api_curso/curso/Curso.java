@@ -1,13 +1,14 @@
-package br.com.senai.api.curso;
+package br.com.senai.api_cursos.api_curso.curso;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "cursos")
-@Entity(name = "cursos")
+@Table(name = "curso")
+@Entity(name = "curso")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,6 +27,8 @@ public class Curso {
 
     private Boolean ativo;
 
+
+
     public enum Periodo {
         MATUTINO,
         VESPERTINO,
@@ -38,5 +41,14 @@ public class Curso {
         this.periodo = dados.periodo();
         this.ativo = true;
     }
+    public void atualizarCurso(@Valid DadosAtualizarCurso dados) {
+        if (dados.nome() != null && !dados.nome().isBlank())
+            this.nome = dados.nome();
+    }
+
+    public void excluirCurso(){this.ativo = false;}
+
 }
+
+
 
