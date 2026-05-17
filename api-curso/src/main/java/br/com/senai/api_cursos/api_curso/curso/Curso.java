@@ -44,6 +44,9 @@ public class Curso {
     public void atualizarCurso(@Valid DadosAtualizarCurso dados) {
         if (dados.nome() != null && !dados.nome().isBlank())
             this.nome = dados.nome();
+        if (dados.periodo() != null) {
+            this.periodo = dados.periodo();
+        }
     }
 
     public void excluirCurso(){this.ativo = false;}
